@@ -1,13 +1,10 @@
-from flask import Flask, jsonify
-import os
+from flask import Flask, redirect
 
 app = Flask(__name__)
 
-
 @app.route('/')
-def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
-
+def redirect_to_website():
+    return redirect('https://www.youtube.com/watch?v=dvHlC29ahgg')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
+    app.run(debug=True)
